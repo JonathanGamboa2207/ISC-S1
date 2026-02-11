@@ -1,4 +1,3 @@
-// 1. Tus datos: Preguntas y Respuestas
 const data = [
     { q: "¿Qué es Hardware?", a: " Es toda la parte física y tangible de la computadora, como los circuitos, cables y periféricos que puedes tocar." },
     { q: "¿Qué es Software?", a: "Son los programas e instrucciones lógicas que le dicen al hardware exactamente qué tareas debe realizar." },
@@ -18,10 +17,9 @@ const data = [
 ];
 
 
-
 const container = document.getElementById('glossary-container');
 
-// 2. Función para renderizar el glosario
+
 data.forEach((item, index) => {
     const section = document.createElement('div');
     section.className = 'glossary-item';
@@ -37,17 +35,17 @@ data.forEach((item, index) => {
     container.appendChild(section);
 });
 
-// 3. Función para mostrar/ocultar
 function toggleAnswer(index) {
     const answer = document.getElementById(`answer-${index}`);
     const isVisible = answer.classList.contains('show');
     
-    // Opcional: Cerrar otras respuestas antes de abrir la nueva
+   
     document.querySelectorAll('.answer').forEach(el => el.classList.remove('show'));
 
     if (!isVisible) {
         answer.classList.add('show');
     }
 }
+
 
 
